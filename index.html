@@ -184,29 +184,66 @@
 
         .cta-button {
             display: block;
-            width: 400px;
+            width: 500px;
             max-width: 90%;
-            padding: 25px 40px;
-            font-size: 1.4em;
+            padding: 20px 40px;
+            font-size: 1.3em;
             font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 15px auto;
+            cursor: pointer;
+            transition: all 0.4s;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cta-primary {
             color: #000;
             background: linear-gradient(135deg, #00d9ff 0%, #0099ff 50%, #0066ff 100%);
             border: 4px solid #ffd700;
-            border-radius: 10px;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin: 30px auto;
-            cursor: pointer;
-            transition: all 0.4s;
+            padding: 25px 40px;
             box-shadow: 
                 0 0 40px rgba(255, 215, 0, 0.8),
                 0 0 80px rgba(0, 191, 255, 0.6),
                 inset 0 2px 15px rgba(255, 255, 255, 0.5),
                 inset 0 -2px 15px rgba(0, 100, 255, 0.3);
-            position: relative;
-            overflow: hidden;
             animation: glow-button 2s ease-in-out infinite;
+        }
+
+        .cta-main-text {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .cta-sub-text {
+            display: block;
+            font-size: 0.8em;
+            opacity: 0.9;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .cta-secondary {
+            color: #fff;
+            background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
+            border: 3px solid #00bfff;
+            font-size: 1.1em;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 0 30px rgba(0, 191, 255, 0.5),
+                inset 0 2px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-secondary svg {
+            margin-right: 10px;
         }
 
         @keyframes glow-button {
@@ -242,7 +279,7 @@
             left: 100%;
         }
 
-        .cta-button:hover {
+        .cta-primary:hover {
             transform: scale(1.05) translateY(-5px);
             box-shadow: 
                 0 0 80px rgba(255, 215, 0, 1),
@@ -250,6 +287,24 @@
                 inset 0 2px 20px rgba(255, 255, 255, 0.8),
                 inset 0 -2px 20px rgba(0, 100, 255, 0.6);
             border-color: #fff;
+        }
+
+        .cta-secondary:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 
+                0 0 50px rgba(0, 191, 255, 0.8),
+                0 15px 60px rgba(0, 102, 153, 0.6),
+                inset 0 2px 15px rgba(255, 255, 255, 0.3);
+            border-color: #00ffff;
+        }
+
+        .players-count {
+            color: #ffd700;
+            font-size: 1.1em;
+            margin-top: 25px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
         /* Stats Section */
@@ -794,22 +849,40 @@
                 font-size: 1.4em;
             }
 
-            .obt-badge {
-                padding: 15px 35px;
+            .cta-button {
+                width: 90%;
+                font-size: 1em;
             }
 
-            .obt-text {
-                font-size: 1.5em;
-                letter-spacing: 3px;
+            .cta-primary {
+                padding: 20px 30px;
+            }
+
+            .cta-main-text {
+                font-size: 1em;
+            }
+
+            .cta-sub-text {
+                font-size: 0.75em;
+            }
+
+            .cta-secondary {
+                font-size: 0.95em;
+                padding: 15px 25px;
+            }
+
+            .cta-secondary svg {
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+            }
+
+            .players-count {
+                font-size: 0.95em;
             }
 
             .section-title {
                 font-size: 2.2em;
-            }
-
-            .cta-button {
-                padding: 18px 50px;
-                font-size: 1.2em;
             }
 
             .features-grid,
@@ -839,11 +912,19 @@
             <h1 class="logo">RF Default</h1>
             <p class="tagline">Легенда возвращается 14 февраля</p>
             
-            <a href="https://forum.rf-default.com/index.php?/topic/7827-%D1%84%D0%B0%D0%B9%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%85%D0%BE%D0%B4%D0%B0-%D0%B2-%D0%B8%D0%B3%D1%80%D1%83/" class="cta-button" target="_blank">Начать играть</a>
+            <a href="https://forum.rf-default.com/index.php?/topic/7827-%D1%84%D0%B0%D0%B9%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%85%D0%BE%D0%B4%D0%B0-%D0%B2-%D0%B8%D0%B3%D1%80%D1%83/" class="cta-button cta-primary" target="_blank">
+                <span class="cta-main-text">ЗАРЕГИСТРИРОВАТЬСЯ НА ОБТ</span>
+                <span class="cta-sub-text">Старт 14 февраля</span>
+            </a>
             
-            <div class="obt-badge">
-                <span class="obt-text">ОБТ ЗАПУЩЕНО</span>
-            </div>
+            <a href="https://t.me/rfonline_default" class="cta-button cta-secondary" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 10px;">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-.99.53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.74 3.99-1.74 6.66-2.89 8-3.45 3.81-1.58 4.6-1.86 5.12-1.87.11 0 .37.03.54.17.14.11.18.26.2.37.01.08.03.29.01.45z"/>
+                </svg>
+                Вступить в комьюнити ТГ
+            </a>
+
+            <p class="players-count">Уже 5000+ игроков ждут запуска!</p>
         </div>
     </section>
 
