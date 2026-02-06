@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RF Default - Легенда возвращается 14 февраля</title>
     
-    <!-- Передача событий Метрики в родительское окно (Tilda) -->
+    <!-- Передача событий Метрики через postMessage -->
     <script>
     function sendMetrikaGoal(goalName) {
         try {
-            // Пытаемся отправить событие в родительское окно (Tilda)
-            if (window.parent && window.parent !== window && window.parent.ym) {
-                window.parent.ym(106647628, 'reachGoal', goalName);
-                console.log('Metrika goal sent to parent:', goalName);
-            } else {
-                console.log('Parent window or ym not found');
-            }
+            // Отправляем событие в родительское окно через postMessage
+            window.parent.postMessage({
+                type: 'metrika_goal',
+                goal: goalName,
+                counter: 106647628
+            }, '*');
+            console.log('Metrika goal sent via postMessage:', goalName);
         } catch(e) {
             console.error('Error sending metrika goal:', e);
         }
