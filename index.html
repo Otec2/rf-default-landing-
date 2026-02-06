@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RF Default - Легенда возвращается 14 февраля</title>
     
-    <!-- Яндекс.Метрика -->
-    <script type="text/javascript">
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-       ym(106647628, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-       });
+    <!-- Передача событий Метрики в родительское окно (Tilda) -->
+    <script>
+    function sendMetrikaGoal(goalName) {
+        try {
+            // Пытаемся отправить событие в родительское окно (Tilda)
+            if (window.parent && window.parent !== window && window.parent.ym) {
+                window.parent.ym(106647628, 'reachGoal', goalName);
+                console.log('Metrika goal sent to parent:', goalName);
+            } else {
+                console.log('Parent window or ym not found');
+            }
+        } catch(e) {
+            console.error('Error sending metrika goal:', e);
+        }
+    }
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/106647628" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Яндекс.Метрика -->
     
     <style>
         * {
@@ -931,12 +930,12 @@
             <h1 class="logo">RF Default</h1>
             <p class="tagline">Легенда возвращается 14 февраля</p>
             
-            <a href="https://forum.rf-default.com/index.php?/topic/7827-%D1%84%D0%B0%D0%B9%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%85%D0%BE%D0%B4%D0%B0-%D0%B2-%D0%B8%D0%B3%D1%80%D1%83/" class="cta-button cta-primary" target="_blank" onclick="ym(106647628,'reachGoal','click_registration'); return true;">
+            <a href="https://forum.rf-default.com/index.php?/topic/7827-%D1%84%D0%B0%D0%B9%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%85%D0%BE%D0%B4%D0%B0-%D0%B2-%D0%B8%D0%B3%D1%80%D1%83/" class="cta-button cta-primary" target="_blank" onclick="sendMetrikaGoal('click_registration'); return true;">
                 <span class="cta-main-text">ЗАРЕГИСТРИРОВАТЬСЯ НА ОБТ</span>
                 <span class="cta-sub-text">Старт 14 февраля</span>
             </a>
             
-            <a href="https://t.me/+Iy2xLz5QMIhiYjky" class="cta-button cta-secondary" target="_blank" onclick="ym(106647628,'reachGoal','click_telegram'); return true;">
+            <a href="https://t.me/+Iy2xLz5QMIhiYjky" class="cta-button cta-secondary" target="_blank" onclick="sendMetrikaGoal('click_telegram'); return true;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 10px;">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-.99.53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.74 3.99-1.74 6.66-2.89 8-3.45 3.81-1.58 4.6-1.86 5.12-1.87.11 0 .37.03.54.17.14.11.18.26.2.37.01.08.03.29.01.45z"/>
                 </svg>
@@ -1136,7 +1135,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-logo">RF Default</div>
-        <a href="https://forum.rf-default.com/index.php?/topic/7827-%D1%84%D0%B0%D0%B9%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%85%D0%BE%D0%B4%D0%B0-%D0%B2-%D0%B8%D0%B3%D1%80%D1%83/" class="cta-button" target="_blank" onclick="ym(106647628,'reachGoal','click_registration'); return true;">Начать играть</a>
+        <a href="https://forum.rf-default.com/index.php?/topic/7827-%D1%84%D0%B0%D0%B9%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%85%D0%BE%D0%B4%D0%B0-%D0%B2-%D0%B8%D0%B3%D1%80%D1%83/" class="cta-button" target="_blank" onclick="sendMetrikaGoal('click_registration'); return true;">Начать играть</a>
         <p class="footer-text">&copy; 2025 RF Default. Все права защищены.</p>
     </footer>
 
